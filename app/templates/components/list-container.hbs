@@ -1,0 +1,17 @@
+{{yield}}
+{{yield}}
+
+<a {{action "clickedList"}} class="list-item-container">
+	<h3> {{list.title}} </h3>
+	<ul> TODO: this should use a list-item component </ul>
+</a>
+
+
+//TODO: made content edible but need to change model. action?
+<div style="display: {{showDetailModal}}" class="detail-modal">
+	<div class="modal-content">
+	<h4 contenteditable="true"> {{list.title}} </h4>
+	<button {{action "closeDetailView"}}>CLOSE</button>
+	<button {{action "deleteListItem"}}> DELETE </button>
+	</div>
+</div>

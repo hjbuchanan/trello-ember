@@ -4,15 +4,21 @@ export default function() {
       "data": [{
         "type": "lists",
         "id": 1,
-        "title": "grocery list",
-        "description": "my lists for groceries"
+        "attributes": {
+          "title": "grocery list",
+          "description": "my lists for groceries",
+          "item_id": [1]
+        }
       }, {
         "type": "lists",
         "id": 2, 
-        "title": "todo",
-        "description": "my todos for today"
+        "attributes": {
+          "title": "todo",
+          "description": "my todos for today",
+          "item_id": [2]
+        }
       }]
-    };
+    }
   });
 
   this.get('/items', function() {
@@ -20,15 +26,19 @@ export default function() {
       "data": [{
         "type": "items",
         "id": 1,
-        "list-id": 1,
-        "title": "bell peppers",
-        "description": "for cooking"
+        "attributes" : {
+          "list_id": 1,
+          "title": "bell peppers",
+          "description": "for cooking"
+        }
       }, {
         "type": "items",
         "id": 2,
-        "list-id": 1, 
-        "title": "chicken",
-        "description": "for soup"
+        "attributes": {
+          "list_id": 1, 
+          "title": "chicken",
+          "description": "for soup"
+        }
       }]
     };
   })

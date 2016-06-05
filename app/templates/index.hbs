@@ -1,10 +1,11 @@
 {{outlet}}	
 
-<div class="lists-container">
-<h1>HELLO</h1>
 
-	{{#each model as |list|}} 
-		<p> {{list.id}} </p>
-		<p> {{list.description}} </p>
+<h1> Hannah Jane's index route </h1>
+{{outlet}}
+<div class="lists-container">
+	{{#each model as |list|}}
+	{{#list-container list=list}}
+	{{/list-container}}
 	{{/each}}
 </div>
