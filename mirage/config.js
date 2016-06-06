@@ -7,7 +7,7 @@ export default function() {
         "attributes": {
           "title": "grocery list",
           "description": "my lists for groceries",
-          "item_id": [1]
+          "item_id": [1, 2]
         }
       }, {
         "type": "lists",
@@ -15,7 +15,7 @@ export default function() {
         "attributes": {
           "title": "todo",
           "description": "my todos for today",
-          "item_id": [2]
+          "item_id": []
         }
       }]
     }
