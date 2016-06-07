@@ -7,15 +7,8 @@ export default function() {
         "attributes": {
           "title": "grocery list",
           "description": "my lists for groceries",
-          "item_id": [1, 2]
-        }
-      }, {
-        "type": "lists",
-        "id": 2, 
-        "attributes": {
-          "title": "todo",
-          "description": "my todos for today",
-          "item_id": []
+          "items": [{"title": "chicken",
+          "description": "for soup"}, {"title": "soap", "description": "for bathroom"}]
         }
       }]
     }

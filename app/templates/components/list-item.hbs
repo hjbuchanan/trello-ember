@@ -2,5 +2,15 @@
 
 
 <div>
-<p> {{item.title}} </p>
+
+<p {{action "clickedList"}}> {{item.title}} </p>
+</div>
+
+<div style="display: {{showDetailModal}}" class="detail-modal">
+	<div class="modal-content">
+	<h4 contenteditable="true"> {{item.title}} </h4>
+	<h4 contenteditable="true"> {{item.description}} </h4>
+	<button {{action "closeDetailView"}}>CLOSE</button>
+	<button {{action "deleteListItem" item}}> DELETE </button>
+	</div>
 </div>

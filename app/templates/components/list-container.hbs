@@ -1,17 +1,14 @@
 {{yield}}
 
-<a {{action "clickedList"}} class="list-item-container">
+
+<div class="list-item-container">
 	<h3> {{list.title}} </h3>
 	{{#each list.items as |item|}}
 	{{#list-item item=item}} 
 	{{/list-item}}
 	{{/each}}
-</a>
-
-<div style="display: {{showDetailModal}}" class="detail-modal">
-	<div class="modal-content">
-	<h4 contenteditable="true"> {{list.title}} </h4>
-	<button {{action "closeDetailView"}}>CLOSE</button>
-	<button {{action "deleteListItem"}}> DELETE </button>
-	</div>
+	<button {{action "deleteList" list}} class="delete-button">Delete List</button>
 </div>
+
+
+

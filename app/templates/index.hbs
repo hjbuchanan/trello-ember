@@ -7,7 +7,9 @@
 
 <div class="lists-container">
 	{{#each model as |list|}}
-	{{#list-container list=list}}
+	{{#list-container list=list deleteList="deleteList"}}
 	{{/list-container}}
 	{{/each}}
 </div>
+
+<button>Add a List!</button>
