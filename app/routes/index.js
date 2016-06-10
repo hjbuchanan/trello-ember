@@ -9,17 +9,17 @@ const List = Ember.Object.extend({
      }
 });
 
-// let listItemOne = List.create({
-//      "title": "grocery list",
-//           "description": "my lists for groceries",
-//           "items": [{
-//                "title": "bellpeppers",
-//                "description": "for nachos"
-//           }, {
-//                "title": "chicken",
-//                "description": "for soup"
-//           }]
-// });
+let listItemOne = List.create({
+     "title": "grocery list",
+          "description": "my lists for groceries",
+          "items": [{
+               "title": "bellpeppers",
+               "description": "for nachos"
+          }, {
+               "title": "chicken",
+               "description": "for soup"
+          }]
+});
 // const listsDefaults = [{
 //           "title": "grocery list",
 //           "description": "my lists for groceries",
@@ -42,22 +42,27 @@ const List = Ember.Object.extend({
 //           }]
 //       }];
 
-// let defaultLists = [];
-// defaultLists.push(listItemOne);
+let defaultLists = [];
+defaultLists.push(listItemOne);
 export default Ember.Route.extend({
 	model() {
           // console.log(defaultLists);
-		return this.store.findAll('list');
-		// return defaultLists;
+		// return this.store.findAll('list');
+		return defaultLists;
 	}, 
 
      actions: {
           deleteList: function(list) {
-               debugger; 
-               let lists = this.store.findAll('list');
+               // let model = this.modelFor(this.index);
+               // let lists = this.store.findAll('list');
+               let controllerModel = this.controller.get('model')
 
+               controllerModel.pushObject(list);
+
+               let newContorllerModel = this.controller.get('model');
+               console.log(newContorllerModel);
                // lists.removeObject(list);
-               let store = this.store;
+
                // store.findRecord('list', 1).then(function(list) {
                //      console.log('list in find record', list);
                //      store.unloadRecord(list);
@@ -65,6 +70,20 @@ export default Ember.Route.extend({
 
                // list.destroyRecord();
                // this.store.findAll('list');
+          },
+          addList: function(title, description) {
+               // take title
+               debugger;
+               // let this.store.createRecord('list', list);
+               let controllerModel = this.controller.get('model');
+               let newList = List.create({title, description, items: []});
+               controllerModel.pushObject(newList);
+               let newContorllerModel = this.controller.get('model');
+               console.log(newContorllerModel);
+          },
+
+          addItemToList: function(title, description) {
+               console.log('this hit!');
                debugger;
           }
      }

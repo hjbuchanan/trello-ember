@@ -11,5 +11,9 @@
 	{{/list-container}}
 	{{/each}}
 </div>
-
-<button>Add a List!</button>
+<form>
+{{input value=title}}
+{{input value=description}}
+</form>
+<button {{action "addList" title description}} >Add a List!</button>
+	<!-- add a "add list item component" -->

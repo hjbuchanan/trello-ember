@@ -28,6 +28,24 @@ actions: {
 
 
 		this.sendAction('deleteList', this);
+	},
+
+	addList(list) {
+
+// 		this.sendAction('addList', this, {
+//      	"title": "2nd list",
+//           "description": "my lists for groceries",
+//           "items": [{
+//                "title": "bellpeppers",
+//                "description": "for nachos"
+//           }, {
+//                "title": "chicken",
+//                "description": "for soup"
+//           }]
+// });
+	this;
+	debugger;
+	this.sendAction('addList', this);
 	}
 }
 

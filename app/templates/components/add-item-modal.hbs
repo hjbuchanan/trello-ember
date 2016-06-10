@@ -1,0 +1,13 @@
+{{yield}}
+<button {{action "showAddItem"}}>Add items to list</button>
+
+<div style="display: {{showDetailModal}}" class="detail-modal">
+	<div class="modal-content">
+	<form>
+title:{{input value=itemTitle}}
+description: {{input value=itemDescription}}
+</form>	
+	<button {{action "addItemToList" itemTitle}}>Add to List</button>
+	<button {{action "closeDetailView" itemDescription}}> CLOSE </button>
+	</div>
+</div>
