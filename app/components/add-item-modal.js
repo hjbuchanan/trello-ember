@@ -11,9 +11,9 @@ export default Ember.Component.extend({
 			this.set('showDetailModal', 'none');
 		},
 
-		addItemToList(title, description) {
-			// should this go up to the route level?
-			this.sendAction('addItemToList', title, description);
+		addItemToList(title, description, list) {
+			console.log(list);
+			this.sendAction('addItemToList', title, description, list);
 		}
 	}
 });

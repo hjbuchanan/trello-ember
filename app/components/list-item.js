@@ -12,12 +12,9 @@ export default Ember.Component.extend({
 			this.set('showDetailModal', 'none');
 		},
 
+		// TODO: actually delete list item
 		deleteListItem() {
-			//TODO: delete the item 
-			console.log(this);
-
 			let item = this.get('item');
-
 		}
 	}
 

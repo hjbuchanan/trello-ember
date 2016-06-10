@@ -1,19 +1,18 @@
 {{outlet}}	
 
 
-<h1> Hannah Jane's index route </h1>
-{{outlet}}
-
-
+<h1> Light Weight Trello</h1>
 <div class="lists-container">
 	{{#each model as |list|}}
-	{{#list-container list=list deleteList="deleteList"}}
+	{{#list-container list=list addItemToList=(action 'addItemToList') deleteList="deleteList"}}
 	{{/list-container}}
 	{{/each}}
 </div>
-<form>
-{{input value=title}}
-{{input value=description}}
+<form style="display: {{showAddListForm}}">
+	{{input value=title}}
+	{{input value=description}}
+	<button {{action "addList" title description}}> Add this list </button>
 </form>
-<button {{action "addList" title description}} >Add a List!</button>
-	<!-- add a "add list item component" -->
+<button>
+	List Form
+</button>

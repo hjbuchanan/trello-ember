@@ -51,6 +51,10 @@ export default Ember.Route.extend({
 		return defaultLists;
 	}, 
 
+     setUpController: function(controller, model) {
+          this._super(controller, model);
+     },
+
      actions: {
           deleteList: function(list) {
                // let model = this.modelFor(this.index);
@@ -82,9 +86,13 @@ export default Ember.Route.extend({
                console.log(newContorllerModel);
           },
 
-          addItemToList: function(title, description) {
-               console.log('this hit!');
-               debugger;
+          // TODO: right now you can add an item but you don't know which list its associated with 
+          addItem: function(title, description, list) {
+            console.log(list);
+            // TODO: this doesn't work. updates the list you passed but not the model.
+            list.items.push({title, description});
+            debugger;
+            list.propertyDidChange('items');
           }
      }
 });
