@@ -5,7 +5,6 @@ export default Ember.Component.extend({
 	store: Ember.inject.service(),
 	actions: {
 		deleteList(list) {
-			debugger;
 			this.sendAction('deleteList', list);
 		},
 
