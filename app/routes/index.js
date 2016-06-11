@@ -56,24 +56,11 @@ export default Ember.Route.extend({
      },
 
      actions: {
-          deleteList: function(list) {
-               // let model = this.modelFor(this.index);
-               // let lists = this.store.findAll('list');
+          deleteListModel: function(list) {
                let controllerModel = this.controller.get('model')
-
-               controllerModel.pushObject(list);
-
-               let newContorllerModel = this.controller.get('model');
-               // lists.removeObject(list);
-
-               // store.findRecord('list', 1).then(function(list) {
-               //      console.log('list in find record', list);
-               //      store.unloadRecord(list);
-               // });
-
-               // list.destroyRecord();
-               // this.store.findAll('list');
+               controllerModel.removeObject(list);
           },
+
           addList: function(title, description) {
                let controllerModel = this.controller.get('model');
                let newList = List.create({title, description, items: []});

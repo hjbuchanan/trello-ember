@@ -4,7 +4,7 @@
 <h1> Light Weight Trello</h1>
 <div class="lists-container">
 	{{#each model as |list|}}
-	{{#list-container list=list addItemToList=(action 'addItemToList') deleteListItem=(action "deleteListItem") }}
+	{{#list-container list=list addItemToList=(action 'addItemToList') deleteListItem=(action "deleteListItem") deleteList=(action "deleteList") }}
 	{{/list-container}}
 	{{/each}}
 </div>

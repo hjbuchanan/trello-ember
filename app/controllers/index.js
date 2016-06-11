@@ -9,6 +9,10 @@ export default Ember.Controller.extend({
 
 		deleteListItem (item, list) {
 			this.send('deleteItemFromList', item, list);
+		},
+
+		deleteList(list) {
+			this.send('deleteListModel', list);
 		}
 	}
 });

@@ -7,7 +7,7 @@
 	{{#list-item item=item list=list deleteListItem=(action "deleteListItem")}} 
 	{{/list-item}}
 	{{/each}}
-	<button {{action "deleteList" this}} class="delete-button">Delete List</button>
+	<button {{action "deleteList" list}} class="delete-button">Delete List</button>
 	{{#add-item-modal addItemToList=(action 'addItemToList') list=list}}
 	{{/add-item-modal}}
 	<div style="display: {{showDetailModal}}"></div>
