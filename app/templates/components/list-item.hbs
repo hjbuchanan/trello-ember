@@ -10,7 +10,15 @@
 	<h4 contenteditable="true"> {{item.title}} </h4>
 	<h4 contenteditable="true"> {{item.description}} </h4>
 	<button {{action "closeDetailView" item}}>CLOSE</button>
-	<button {{action "deleteListItem" item list}}> DELETE </button>
+	<button {{action "confirmDelete" item list}}> DELETE </button>
+	</div>
+</div>
+
+<div style="display: {{showConfirmDelete}}" class="detail-modal confirmation-modal">
+	<div class="modal-content">
+		<h3> Are you sure? </h3>
+		<button {{action "deleteListItem" item list}}>Yes</button>
+		<button {{action "closeDeleteModal"}}> No </button>
 	</div>
 </div>
 
