@@ -64,7 +64,6 @@ export default Ember.Route.extend({
                controllerModel.pushObject(list);
 
                let newContorllerModel = this.controller.get('model');
-               console.log(newContorllerModel);
                // lists.removeObject(list);
 
                // store.findRecord('list', 1).then(function(list) {
@@ -76,22 +75,31 @@ export default Ember.Route.extend({
                // this.store.findAll('list');
           },
           addList: function(title, description) {
-               // take title
-               debugger;
-               // let this.store.createRecord('list', list);
                let controllerModel = this.controller.get('model');
                let newList = List.create({title, description, items: []});
                controllerModel.pushObject(newList);
                let newContorllerModel = this.controller.get('model');
-               console.log(newContorllerModel);
           },
 
-          // TODO: right now you can add an item but you don't know which list its associated with 
           addItem: function(title, description, list) {
-            console.log(list);
-            // TODO: this doesn't work. updates the list you passed but not the model.
             list.items.push({title, description});
-            debugger;
+            list.propertyDidChange('items');
+          },
+
+          deleteItemFromList: function(item, list) {
+            let title = item.title;
+            let description = item.description;
+            let itemsArray = list.items;
+
+            for (let itemElem of itemsArray) {
+              if (itemElem.title === title && itemElem.description) {
+                //delete this element from an array
+                let index = itemsArray.indexOf(itemElem);
+                if (index > -1 ) {
+                  itemsArray.splice(index, 1);
+                }
+              }
+            }
             list.propertyDidChange('items');
           }
      }

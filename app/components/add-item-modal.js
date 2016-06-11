@@ -12,7 +12,6 @@ export default Ember.Component.extend({
 		},
 
 		addItemToList(title, description, list) {
-			console.log(list);
 			this.sendAction('addItemToList', title, description, list);
 		}
 	}

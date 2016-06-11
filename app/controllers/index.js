@@ -5,6 +5,10 @@ export default Ember.Controller.extend({
 		addItemToList (title, description, list) {
 			this.send('addItem', title, description, list);
 			return true;
-		} 
+		},
+
+		deleteListItem (item, list) {
+			this.send('deleteItemFromList', item, list);
+		}
 	}
 });

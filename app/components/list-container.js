@@ -6,15 +6,17 @@ export default Ember.Component.extend({
 	actions: {
 		deleteList() {
 			var store = this.get('store');
-
-
-
 			this.sendAction('deleteList', this);
 		},
 
 		addItemToList (title, description, list) {
-			console.log('container');
 			this.sendAction('addItemToList', title, description, list);
+		},
+
+		// need to pass this action in all the components html
+
+		deleteListItem (item, list) {
+			this.sendAction('deleteListItem', item, list);
 		}
 	}
 });
