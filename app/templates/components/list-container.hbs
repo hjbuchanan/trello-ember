@@ -4,7 +4,7 @@
 <div class="list-item-container">
 	<h3> {{list.title}} </h3>
 	{{#each list.items as |item|}}
-	{{#list-item item=item list=list deleteListItem=(action "deleteListItem")}} 
+	{{#list-item item=item list=list deleteListItem=(action "deleteListItem") updateListItem=(action "updateListItem")}} 
 	{{/list-item}}
 	{{/each}}
 	<button {{action "deleteList" list}} class="delete-button">Delete List</button>

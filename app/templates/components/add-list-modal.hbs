@@ -1,0 +1,12 @@
+{{yield}}
+<div>
+	<form style="display: {{showAddListModal}}">
+		<p>Title </p>{{input value=title}}
+		<p>Description</p>{{input value=description}}
+		<button {{action "sendAddList" title description}}>Create List</button>
+	</form>
+</div>
+
+<button style="display: {{showCreateButton}}" {{action "showAddList"}}>
+		Create List
+</button>

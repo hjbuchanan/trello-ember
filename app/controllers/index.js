@@ -13,6 +13,15 @@ export default Ember.Controller.extend({
 
 		deleteList(list) {
 			this.send('deleteListModel', list);
+		},
+
+		addList(title, description) {
+			this.send('addListToModel', title, description);
+		},
+
+		updateListItem(title, description, item, list) {
+			this.send('updateItem', title, description, item, list);
+			debugger;
 		}
 	}
 });

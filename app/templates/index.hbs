@@ -4,15 +4,20 @@
 <h1> Light Weight Trello</h1>
 <div class="lists-container">
 	{{#each model as |list|}}
-	{{#list-container list=list addItemToList=(action 'addItemToList') deleteListItem=(action "deleteListItem") deleteList=(action "deleteList") }}
+	{{#list-container list=list addItemToList=(action 'addItemToList') deleteListItem=(action "deleteListItem") deleteList=(action "deleteList") updateListItem=(action "updateListItem")}}
 	{{/list-container}}
 	{{/each}}
 </div>
-<form style="display: {{showAddListForm}}">
-	{{input value=title}}
-	{{input value=description}}
-	<button {{action "addList" title description}}> Add this list </button>
-</form>
-<button>
-	List Form
-</button>
+
+
+{{#add-list-modal addList=(action 'addList')}}
+{{/add-list-modal}}
+<!-- TODO: Make this a Modal View View -->
+<!-- <div>
+	<form style="display: {{showAddListModal}}">
+		<p>Title </p>{{input value=title}}
+		<p>Description</p>{{input value=description}}
+		<button {{action "addList" title description}}> Add this list </button>
+	</form>
+</div> -->
+

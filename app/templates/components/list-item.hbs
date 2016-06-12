@@ -1,15 +1,19 @@
 {{yield}}
 
-
 <div>
 	<p {{action "clickedList"}}> {{item.title}} </p>
 </div>
 
 <div style="display: {{showDetailModal}}" class="detail-modal">
 	<div class="modal-content">
-	<h4 contenteditable="true"> {{item.title}} </h4>
-	<h4 contenteditable="true"> {{item.description}} </h4>
-	<button {{action "closeDetailView" item}}>CLOSE</button>
+	<form>
+		<p>Title:</p>{{input value=item.title}}
+		<p>Description</p>{{input value=item.description}}
+
+	</form>
+<!-- 	<h4 contenteditable="true"> {{item.title}} </h4>
+	<h4 contenteditable="true"> {{item.description}} </h4> -->
+	<button {{action "closeDetailView" title description item list}}>CLOSE</button>
 	<button {{action "confirmDelete" item list}}> DELETE </button>
 	</div>
 </div>

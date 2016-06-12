@@ -16,6 +16,10 @@ export default Ember.Component.extend({
 
 		deleteListItem (item, list) {
 			this.sendAction('deleteListItem', item, list);
+		},
+
+		updateListItem(title, description, item, list) {
+			this.sendAction('updateListItem', title, description, item, list);
 		}
 	}
 });

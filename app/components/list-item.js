@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	// will need a detail view
+	// TODO: need to make content edible the update
 	showDetailModal: 'none',
 	showConfirmDelete: 'none',
 	actions: {
@@ -9,8 +9,9 @@ export default Ember.Component.extend({
 			this.set('showDetailModal', true);
 		},
 
-		closeDetailView() {
+		closeDetailView(title, description, item, list) {
 			this.set('showDetailModal', 'none');
+			// this.sendAction('updateListItem', title, description, item, list);
 		},
 
 		// TODO: need to confirm the delete

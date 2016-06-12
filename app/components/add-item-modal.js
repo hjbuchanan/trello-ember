@@ -13,6 +13,7 @@ export default Ember.Component.extend({
 
 		addItemToList(title, description, list) {
 			this.sendAction('addItemToList', title, description, list);
+			this.set('showDetailModal', 'none');
 		}
 	}
 });

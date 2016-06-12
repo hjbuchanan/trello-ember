@@ -51,6 +51,7 @@ export default Ember.Route.extend({
 		return defaultLists;
 	}, 
 
+
      setUpController: function(controller, model) {
           this._super(controller, model);
      },
@@ -61,7 +62,7 @@ export default Ember.Route.extend({
                controllerModel.removeObject(list);
           },
 
-          addList: function(title, description) {
+          addListToModel: function(title, description) {
                let controllerModel = this.controller.get('model');
                let newList = List.create({title, description, items: []});
                controllerModel.pushObject(newList);
@@ -79,7 +80,7 @@ export default Ember.Route.extend({
             let itemsArray = list.items;
 
             for (let itemElem of itemsArray) {
-              if (itemElem.title === title && itemElem.description) {
+              if (itemElem.title === title && itemElem.description === itemElem.description) {
                 //delete this element from an array
                 let index = itemsArray.indexOf(itemElem);
                 if (index > -1 ) {
@@ -87,6 +88,27 @@ export default Ember.Route.extend({
                 }
               }
             }
+            list.propertyDidChange('items');
+          },
+
+          updateItem: function(title, description, item, list) {
+            let itemsArray = list.items;
+            for (let itemElem of itemsArray) {
+              if(itemElem === item) {
+                let index = itemsArray.indexOf(itemElem);
+                // this is definitely not the way to do it
+                // but it works
+                // itemsArray[index] = {
+                //   title,
+                //   description
+                // };
+
+                list.items.replace(index, 1, {
+                  title,
+                  description
+                });
+              }
+            };
             list.propertyDidChange('items');
           }
      }
