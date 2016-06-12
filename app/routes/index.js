@@ -14,33 +14,11 @@ let listItemOne = List.create({
           "description": "the default list for the light weight trello applications",
           "items": []
 });
-// const listsDefaults = [{
-//           "title": "grocery list",
-//           "description": "my lists for groceries",
-//           "items": [{
-//           	"title": "bellpeppers",
-//           	"description": "for nachos"
-//           }, {
-//           	"title": "chicken",
-//           	"description": "for soup"
-//           }]
-//       }, {
-//           "title": "todo list",
-//           "description": "my todossss",
-//           "items": [{
-//                "title": "clean",
-//                "description": "for the party"
-//           }, {
-//                "title": "work out",
-//                "description": "fitness"
-//           }]
-//       }];
 
 let defaultLists = [];
 defaultLists.push(listItemOne);
 export default Ember.Route.extend({
 	model() {
-          // console.log(defaultLists);
 		// return this.store.findAll('list');
 		return defaultLists;
 	}, 

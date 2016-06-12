@@ -2,13 +2,13 @@
 <button {{action "showAddItem"}}>Add item to list</button>
 
 <div style="display: {{showDetailModal}}" class="detail-modal">
-	<div class="modal-content">
-	<form>
-title:{{input value=itemTitle}}
-description: {{input value=itemDescription}}
-</form>	
-	<button {{action "addItemToList" itemTitle itemDescription list}}>Add to List</button>
-	<button {{action "closeDetailView"}}> CLOSE </button>
+		<div class="modal-content">
+		<form>
+			title:{{input value=itemTitle}}
+			description: {{input value=itemDescription}}
+		</form>	
+		<button {{action "addItemToList" itemTitle itemDescription list}}>Add to List</button>
+		<button {{action "closeDetailView"}}> CLOSE </button>
 	</div>
 </div>
 {{yield}}

@@ -12,8 +12,6 @@ export default Ember.Component.extend({
 			this.sendAction('addItemToList', title, description, list);
 		},
 
-		// need to pass this action in all the components html
-
 		deleteListItem (item, list) {
 			this.sendAction('deleteListItem', item, list);
 		},
