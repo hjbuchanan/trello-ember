@@ -18,6 +18,7 @@ export default Ember.Component.extend({
 			this.sendAction('deleteListItem', item, list);
 		},
 
+		// implemented but didn't end up using
 		updateListItem(title, description, item, list) {
 			this.sendAction('updateListItem', title, description, item, list);
 		}

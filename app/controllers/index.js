@@ -19,6 +19,7 @@ export default Ember.Controller.extend({
 			this.send('addListToModel', title, description);
 		},
 
+		// implemented but didn't end up using
 		updateListItem(title, description, item, list) {
 			this.send('updateItem', title, description, item, list);
 		}
