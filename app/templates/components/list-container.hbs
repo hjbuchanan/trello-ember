@@ -2,14 +2,14 @@
 
 
 <div class="list-item-container">
-	<h3> {{list.title}} </h3>
+	<h3 class="list-title"> {{list.title}} </h3>
 	{{#each list.items as |item|}}
 	{{#list-item item=item list=list deleteListItem=(action "deleteListItem") updateListItem=(action "updateListItem")}} 
 	{{/list-item}}
 	{{/each}}
-	<button {{action "deleteList" list}} class="delete-button">Delete List</button>
 	{{#add-item-modal addItemToList=(action 'addItemToList') list=list}}
 	{{/add-item-modal}}
+	<button {{action "deleteList" list}} class="delete-button">Delete List</button>
 </div>
 
 

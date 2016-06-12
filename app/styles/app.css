@@ -1,4 +1,10 @@
+body {
+    font-family: helvetica;
+}
 
+h1 {
+    text-align: center;
+}
 
 .lists-container {
 	width: 1480px;
@@ -7,10 +13,20 @@
 .list-item-container {
 	width: 15%;
 	float: left;
+    border: 1px solid black;
+    margin-left: 20px;
+}
+
+.list-title {
+    text-align: center;
+}
+
+.item-content {
+    text-align: center;
 }
 
 .detail-modal {
-position: fixed;
+    position: fixed;
     z-index: 1;
     padding-top: 100px;
     left: 0;
@@ -28,4 +44,9 @@ position: fixed;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+}
+
+.add-list-modal {
+    float: left;
+    margin-left: 20px;
 }

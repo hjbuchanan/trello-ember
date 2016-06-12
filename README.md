@@ -23,10 +23,14 @@ Initially I tried to implement the data using ember and mirage, but that ended u
 After continuing to build I realized there were some basic components that could have been shared more easily. Adding an item and adding a list forms are pretty much the same functionality and view but just wired up to different data. 
 
 
+#### TODOs
+* Bugs: When you add an item to the list, in the add-list-modal it has the previously typed in information. Need to clear it. 
+* Tests
+* Error Handling
+* Linter
+
 #### Design
 Needs improvement
-
-
 
 
 ## Running this Application

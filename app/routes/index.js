@@ -10,15 +10,9 @@ const List = Ember.Object.extend({
 });
 
 let listItemOne = List.create({
-     "title": "grocery list",
-          "description": "my lists for groceries",
-          "items": [{
-               "title": "bellpeppers",
-               "description": "for nachos"
-          }, {
-               "title": "chicken",
-               "description": "for soup"
-          }]
+     "title": "Default List",
+          "description": "the default list for the light weight trello applications",
+          "items": []
 });
 // const listsDefaults = [{
 //           "title": "grocery list",
