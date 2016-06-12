@@ -21,7 +21,6 @@ export default Ember.Controller.extend({
 
 		updateListItem(title, description, item, list) {
 			this.send('updateItem', title, description, item, list);
-			debugger;
 		}
 	}
 });
